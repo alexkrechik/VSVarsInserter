@@ -1,0 +1,14 @@
+{
+	"preset": "google",
+	"maximumLineLength": 120,
+	"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+	"validateQuoteMarks": { "mark": "'", "escape": true },
+	"disallowMultipleVarDecl": "exceptUndefined",
+	"validateIndentation": "\t",
+	"disallowSpacesInFunctionExpression": null,
+	"disallowSpacesInAnonymousFunctionExpression": null,
+	"requireSpacesInAnonymousFunctionExpression": {
+		"beforeOpeningRoundBrace": true,
+		"beforeOpeningCurlyBrace": true
+	}
+}
