@@ -1,65 +1,62 @@
 # VSVarsInserter README
 
-This is the README for your extension "VSVarsInserter". After writing up a brief description, we recommend including the following sections.
+Replace 'return' block for js module with up-to-date list of module vars
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+1) This plugin will get all the variables names, which are listed between 'module.exports' and 'return' lines
+2) After this plugin will replace module 'return' block with list ov vars like:
+```javascript
+return {
 
-For example if there is an image subfolder under your extension project workspace:
+        var1: var1,
+        var2: var2,
+        var3: var3
 
-\!\[feature X\]\(images/feature-x.png\)
+	}
+```
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Howto run
+Use 'Varsinserting into return block' command
 
-## Requirements
+## Examples
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+Plugin will replase 'return' block of:
+```javascript
+var before = 1;
 
-## Extension Settings
+module.exports = function() {
+    var a = 1;
+    // let b = 2;
+    //var c = 3;
+    function d(){}
+    
+    //aaaa
+    var e = 3;
+    var f = 3;
+    let ggg = 3;
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+    return {
+    
+    }
+};
+```
 
-For example:
+    into
+```javascript
+return {
 
-This extension contributes the following settings:
+		a : a,
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
+		e : e,
+		f : f,
+		ggg : ggg,
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+	}
+```
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 0.1.0
 
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on OSX or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on OSX or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (OSX) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Initial release of plugin
