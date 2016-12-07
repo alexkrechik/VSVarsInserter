@@ -16,6 +16,11 @@ return {
 	}
 ```
 
+## Installation
+
+1) Download extension folder
+2) Copy it to the vscode extension folder (ex. '~/.vscode/extensions/' for Mac)
+
 ## Howto run
 Use 'Varsinserting into return block' command
 
