@@ -52,7 +52,7 @@ class VarsInserter {
         let text = window.activeTextEditor.document.getText().split(/[\s\n]*module.exports.*\{/)[1];
         text.split(/\n/).forEach((line) => {
             if((line.match('var') || line.match('let')) && !(line.match(/^\s*\/\/.*/))) {
-                let variable = line.replace(/.*(var|let)\s*/, '').match(/^[^\s]+/)[0];
+                let variable = line.replace(/^\s*(var|let)\s*/, '').match(/^[^\s]+/)[0];
                 returnVars.push(variable);
             } else if(line.match(/^\s*$/) && returnVars[returnVars.length-1] !== '') {
                 returnVars.push('');
