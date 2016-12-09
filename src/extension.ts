@@ -19,12 +19,12 @@ class VarsInserter {
         let returnBlock = this.__getNewReturnBlock(vars);
         let range = this.__getReturnBlockRange();
         window.activeTextEditor.edit((edit) => {
-            edit.replace(range, returnBlock + '\n};');
+            edit.replace(range, returnBlock + '\n}\n');
         });
     }
 
     private __getNewReturnBlock(vars: String[]) {
-        let block = ['\treturn {'];
+        let block: String[] = ['\treturn {'];
         vars.forEach((v) => {
             if (v === '') {
                 block.push('');
@@ -32,6 +32,13 @@ class VarsInserter {
                 block.push('\t\t' + v + ' : ' + v + ',');
             }
         })
+        //Remove last comma
+        for (let i = block.length - 1; i > 0; i--) {
+            if (block[i].match(/,$/)) {
+                block[i] = block[i].replace(/,$/, '');
+                break;
+            }
+        }
         block.push('\t}');
         return block.join('\n');
     }

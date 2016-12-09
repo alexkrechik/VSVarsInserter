@@ -44,7 +44,7 @@ module.exports = function() {
     return {
     
     }
-};
+}
 ```
 
     into
