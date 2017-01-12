@@ -3,7 +3,7 @@
   "displayName": "VSVarsInserter",
   "description": "Insert all the vars, declared via 'var' or 'let', into return block",
   "version": "0.2.0",
-  "publisher": "AlexanderKrechik",
+  "publisher": "alexkrechik",
   "engines": {
     "vscode": "^1.5.0"
   },
