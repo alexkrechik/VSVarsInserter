@@ -1,5 +1,5 @@
 {
-  "name": "VSVarsInserter",
+  "name": "vsvarsinserter",
   "displayName": "VSVarsInserter",
   "description": "Insert all the vars, declared via 'var' or 'let', into return block",
   "version": "0.2.0",

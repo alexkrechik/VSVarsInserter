@@ -2,10 +2,13 @@
 
 Replace 'return' block for js module with up-to-date list of module vars
 
+## Howto run
+Use 'Varsinserting into return block' command
+
 ## Features
 
-1) This plugin will get all the variables names, which are listed between 'module.exports' and 'return' lines
-2) After this plugin will replace module 'return' block with list ov vars like:
+1) This extension will get all the variables names, which are listed between 'module.exports' and 'return' lines
+2) After this extension will replace module 'return' block with list ov vars like:
 ```javascript
 return {
 
@@ -16,17 +19,9 @@ return {
 	}
 ```
 
-## Installation
-
-1) Download extension folder
-2) Copy it to the vscode extension folder (ex. '~/.vscode/extensions/' for Mac)
-
-## Howto run
-Use 'Varsinserting into return block' command
-
 ## Examples
 
-Plugin will replase 'return' block of:
+Extension will replase 'return' block of:
 ```javascript
 var before = 1;
 
