@@ -62,3 +62,6 @@ Initial release of plugin
 
 ### 0.2.0
 Fix all the bugs found using 0.1.0 plugin on real projects.
+
+### 0.2.1
+Added text container start by start 'export default'

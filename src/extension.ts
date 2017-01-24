@@ -56,7 +56,7 @@ class VarsInserter {
 
     private __getReturnVars() {
         let returnVars = [];
-        let text = window.activeTextEditor.document.getText().split(/[\s\n]*module.exports.*\{/)[1];
+        let text = window.activeTextEditor.document.getText().split(/[\s\n]*module.exports.*\{|[\s\n]*export\s+default.*\{/)[1];
         text.split(/\n/).forEach((line) => {
             if((line.match(/^\s*(var|let)(\s+|=)/)) && !(line.match(/^\s*\/\/.*/))) {
                 let variable = line.replace(/^\s*(var|let)(\s+|=)/, '').match(/^[^(\s+|=|;)]+/)[0];
