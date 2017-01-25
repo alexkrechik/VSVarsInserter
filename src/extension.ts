@@ -44,13 +44,18 @@ class VarsInserter {
     }
 
     private __getReturnBlockRange() {
-        var text = window.activeTextEditor.document.getText().split(/\n/);
-        var startLine = text.findIndex((el) => {return el.match(/return.*\{/) !== null});
-        var startChar = 0;
-        var startPosition = new Position(startLine, startChar);
-        var lastLine = text.length;
-        var lastChar = text[text.length - 1].length;
-        var lastPosition = new Position(lastLine, lastChar);
+        let text = window.activeTextEditor.document.getText().split(/\n/);
+        let startLine;
+        for (let i = 0; i < text.length; i++) {
+            if(text[i].match(/return.*\{/) !== null) {
+                startLine = i;
+            }
+        }
+        let startChar = 0;
+        let startPosition = new Position(startLine, startChar);
+        let lastLine = text.length;
+        let lastChar = text[text.length - 1].length;
+        let lastPosition = new Position(lastLine, lastChar);
         return new Range(startPosition, lastPosition);
     }
 
