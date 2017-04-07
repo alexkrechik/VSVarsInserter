@@ -46,16 +46,19 @@ module.exports = function() {
 ```javascript
 return {
 
-		a : a,
+		a: a,
 
-		e : e,
-		f : f,
-		ggg : ggg,
+		e: e,
+		f: f,
+		ggg: ggg,
 
 	}
 ```
 
 ## Release Notes
+
+### 0.2.3
+Fixed Error with unnecessary space after var name in return block
 
 ### 0.2.2
 Fixed error with several 'return' words

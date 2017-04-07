@@ -29,7 +29,7 @@ class VarsInserter {
             if (v === '') {
                 block.push('');
             } else {
-                block.push('\t\t' + v + ' : ' + v + ',');
+                block.push('\t\t' + v + ': ' + v + ',');
             }
         })
         //Remove last comma
