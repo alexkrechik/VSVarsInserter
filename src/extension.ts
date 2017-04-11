@@ -19,7 +19,7 @@ class VarsInserter {
         let returnBlock = this.__getNewReturnBlock(vars);
         let range = this.__getReturnBlockRange();
         window.activeTextEditor.edit((edit) => {
-            edit.replace(range, returnBlock + '\n}\n');
+            edit.replace(range, returnBlock + '\n};\n');
         });
     }
 
@@ -39,7 +39,7 @@ class VarsInserter {
                 break;
             }
         }
-        block.push('\t}');
+        block.push('\t};');
         return block.join('\n');
     }
 
